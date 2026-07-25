@@ -7,22 +7,21 @@ from texts import *
 class FinalWin(QWidget):
     def __init__(self):
         super().__init__()
-        self.initUI()
-        self.connects()
-        self.set_appear()
-        self.show()
+
+        self
     def initUI(self):
         self.index = QLabel(txt_index + ": 0")
         self.index.setAlignment(Qt.AlignCenter)
       
         self.workheart = QLabel(txt_workheart + ": 0")
         self.workheart.setAlignment(Qt.AlignCenter)
-        self.Laayout = QVBoxLayout()
+        self.Layout = QVBoxLayout()
 
-        self.final_Layout.addLayout(self.h_line)
-
-        self.setLayout(self.final_Layout)
-
+        self.Layout.addStretch()
+        self.addWidget(self.index)
+        self.addStretch()
+        self.addWidget(self.workheart)
+        self.addStretch()
 
     def connects(self):
         self.btn_next.clicked.connect(self.next_click)
