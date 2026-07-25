@@ -16,15 +16,22 @@ class MainWin(QWidget):
         # старт:
         self.show()
     def initUI(self):
-        ''' створює графічні елементи '''
-        self.btn_next = QPushButton(txt_next)
-        self.hello_text = QLabel(txt_hello)
+     self.hello_text = QLabel(txt_hello)
+     self.btn_next = QPushButton(txt_next)
 
-        self.layout_line = QVBoxLayout()
-        self.layout_line.addWidget(self.hello_text, alignment = Qt.AlignLeft)
-        self.layout_line.addWidget(self.btn_next)
+     self.main_Layout = QVBoxLayout()
+     self.main_Layout.addWidget(self.hello_text)
+     self.main_Layout.addWidget(self.btn_next)
 
-        self.setLayout(self.layout_line)
+     self.h_line =QHBoxLayout()
+     self.h_line.addStretch()
+     self.h_line.addWidget(self.btn_next)
+     self.h_line.addStretch()
+
+     self.main_Layout.addLayout(self.h_line)
+
+     self.setLayout(self.main_Layout)
+
 
     def connects(self):
         self.btn_next.clicked.connect(self.next_click)

@@ -1,6 +1,7 @@
-txt_next = "Далі"
-txt_hello = "Привіт"
-txt_title = "Моя програма"
+txt_next = "Почати"
+txt_hello = "Ласкаво просимо до програми визначення стану здоров’я!"
+txt_title = "здоров’я"
+txt_instruction = "Ця програма доз"
 
 win_width = 400
 win_height = 200
