@@ -17,7 +17,7 @@ class MainWin(QWidget):
         self.show()
     def initUI(self):
         ''' створює графічні елементи '''
-        self.btn_next = QPushButton(txt_next, self)
+        self.btn_next = QPushButton(txt_next)
         self.hello_text = QLabel(txt_hello)
 
         self.layout_line = QVBoxLayout()
