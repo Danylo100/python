@@ -2,7 +2,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QApplication, QWidget, QHBoxLayout, QVBoxLayout,
               QPushButton, QLabel, QLineEdit)
 
-from instr import *
+from texts import *
        
 class MainWin(QWidget):
     def __init__(self):
@@ -17,11 +17,12 @@ class MainWin(QWidget):
         self.show()
     def initUI(self):
      self.hello_text = QLabel(txt_hello)
+     self.instruction_text = QLabel(txt_instruction)
      self.btn_next = QPushButton(txt_next)
 
      self.main_Layout = QVBoxLayout()
      self.main_Layout.addWidget(self.hello_text)
-     self.main_Layout.addWidget(self.btn_next)
+     self.main_Layout.addWidget(self.instruction_text)
 
      self.h_line =QHBoxLayout()
      self.h_line.addStretch()
