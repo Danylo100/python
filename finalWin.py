@@ -1,5 +1,6 @@
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QApplication, QWidget, QHBoxLayout, QVBoxLayout,
-              QPushButton, QLabel, QLineEdit, QTextEdit)
+              QPushButton, QLabel, QLineEdit)
 
 from texts import *
        
@@ -14,11 +15,11 @@ class FinalWin(QWidget):
         self.set_appear()
 
     def initUI(self):
-        self.index = QLabel("txt_index" + str(self.index))
-        self.index.setAlignment(QTextEdit.AlignmentCenter)
+        self.index = QLabel("Індекс Руф'є: " + str(self.index))
+        self.index.setAlignment(Qt.AlignCenter)
       
         self.workheart = QLabel(txt_workheart + ": " + str(self.workheart))
-        self.workheart.setAlignment(QTextEdit.AlignmentCenter)
+        self.workheart.setAlignment(Qt.AlignCenter)
 
         self.Layout = QVBoxLayout()
 
@@ -40,5 +41,6 @@ class FinalWin(QWidget):
 
 
 app = QApplication([])
-fw = FinalWin(4.8, "txt_res4")
+fw = FinalWin(4.8, "вище середнього")
+fw.show()
 app.exec_()  
