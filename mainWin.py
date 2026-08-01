@@ -1,48 +1,32 @@
-import os
-
-os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = (
-    r"C:\Users\Админ\AppData\Local\Programs\Python\Python38\lib\site-packages\PyQt5\Qt5\plugins\platforms"
-)
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import  QApplication, QWidget, QLabel, QVBoxLayout, QHBoxLayout, QPushButton
-from texts import txt_hello, txt_instruction
-from texts import win_x, win_y,win_width, win_height
+from PyQt5.QtWidgets import (QApplication, QWidget, QHBoxLayout, QVBoxLayout,
+              QPushButton, QLabel, QLineEdit)
 
-class FirstScreen(QWidget):
-    def __init__(self):
-        super().__init__()
+from texts import *
+       
+class MainWin(QWidget):
+    def init(self):
+        super().init()
         self.initUI()
         self.connects()
         self.set_appear()
         self.show()
-
     def initUI(self):
-        v_box = QVBoxLayout()
-        text1 = QLabel(txt_hello)
-        text2 = QLabel(txt_instruction)
-        self.btn_next = QPushButton("почати")
-        v_box.addWidget(text1)
-        v_box.addWidget(text2)
-        v_box.addWidget(self.btn_next)
-        self.setLayout(v_box)
+        self.btn_next = QPushButton(txt_next, self)
+        self.hello_text = QLabel(txt_hello)
+        self.layout_line = QVBoxLayout()
+        self.layout_line.addWidget(self.hello_text, alignment = Qt.AlignLeft)
+        self.setLayout(self.layout_line)
 
     def connects(self):
-        self.btn_next.clicked.connect(self.go_to_the_next_screen)
+        self.btn_next.clicked.connect(self.next_click)
 
     def set_appear(self):
-        self.move(win_x,win_y)
+        self.setWindowTitle(txt_title)
         self.resize(win_width, win_height)
-
-    def go_to_the_next_screen(self):
-        self.hide()
-        #sw = SecondScreen()
-
-
-
-
-
+        self.move(win_x, win_y)
 
 
 app = QApplication([])
-fs = FirstScreen()
+mw = MainWin()
 app.exec_()
