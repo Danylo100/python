@@ -12,11 +12,22 @@ class MainWin(QWidget):
         self.set_appear()
         self.show()
     def initUI(self):
-        self.btn_next = QPushButton(txt_next, self)
-        self.hello_text = QLabel(txt_hello)
-        self.layout_line = QVBoxLayout()
-        self.layout_line.addWidget(self.hello_text, alignment = Qt.AlignLeft)
-        self.setLayout(self.layout_line)
+       def initUI(self):
+               self.index = QLabel()
+               self.index.setAlignment()
+             
+               self.workheart = QLabel()
+               self.workheart.setAlignment()
+       
+               self.Layout = QVBoxLayout()
+       
+               self.Layout.addStretch()
+               self.Layout.addWidget()
+               self.Layout.addStretch()
+               self.Layout.addWidget()
+               self.Layout.addStretch()
+       
+               self.setLayout(self.Layout)
 
     def connects(self):
         self.btn_next.clicked.connect(self.next_click)
